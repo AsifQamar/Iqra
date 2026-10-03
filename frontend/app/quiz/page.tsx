@@ -114,7 +114,7 @@ export default function Quiz() {
     );
   }
 
-  const optionColors = ["bg-[#EF476F]", "bg-[#118AB2]", "bg-[#FFD166]", "bg-[#06D6A0]"];
+  const optionColors = ["!bg-red-100", "!bg-sky-100", "!bg-amber-100", "!bg-emerald-100"];
 
   return (
     <div className="max-w-4xl mx-auto mt-10">
@@ -132,7 +132,7 @@ export default function Quiz() {
             TOPIC: {currentQ.topic}
           </div>
         )}
-        <h2 className="text-3xl md:text-5xl font-heading uppercase leading-tight">
+        <h2 className="text-2xl md:text-3xl font-heading uppercase leading-tight px-4 py-4">
           {currentQ.question}
         </h2>
       </div>
@@ -144,9 +144,9 @@ export default function Quiz() {
 
           if (selected) {
             if (option === currentQ.correctAnswer) {
-              extraClass = "bg-[#06D6A0]"; // green for correct
+              extraClass = "!bg-[#06D6A0]"; // green for correct
             } else if (option === selected) {
-              extraClass = "bg-[#EF476F]"; // red for wrong
+              extraClass = "!bg-[#EF476F]"; // red for wrong
             } else {
               opacity = "opacity-50";
             }
@@ -159,7 +159,7 @@ export default function Quiz() {
               disabled={!!selected}
               className={`brutal-card-interactive cursor-pointer ${extraClass} ${opacity} text-black min-h-32 flex items-center justify-center`}
             >
-              <span className="text-xl font-heading uppercase text-center leading-tight">{option}</span>
+              <span className="text-base md:text-lg font-heading uppercase text-center leading-snug px-2">{option}</span>
             </button>
           );
         })}
