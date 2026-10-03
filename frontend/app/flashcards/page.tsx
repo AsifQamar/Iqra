@@ -123,8 +123,8 @@ export default function Flashcards() {
           style={{ transformStyle: 'preserve-3d' }}
         >
           {/* Front of card */}
-          <div className="absolute inset-0 brutal-card bg-white flex flex-col items-center justify-center text-center backface-hidden" style={{ backfaceVisibility: 'hidden' }}>
-            <h2 className="text-3xl md:text-4xl font-heading uppercase max-w-xl leading-tight px-4">
+          <div className="absolute inset-0 brutal-card bg-white flex flex-col items-center justify-center text-center backface-hidden text-black" style={{ backfaceVisibility: 'hidden', transform: 'translateZ(1px)' }}>
+            <h2 className="text-3xl md:text-4xl font-heading uppercase max-w-xl leading-tight px-4 drop-shadow-md">
               {currentCard.front}
             </h2>
           </div>
