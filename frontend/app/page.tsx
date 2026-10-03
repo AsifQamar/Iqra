@@ -209,6 +209,8 @@ export default function Home() {
                     <option value="10">10 Sec</option>
                     <option value="15">15 Sec</option>
                     <option value="30">30 Sec</option>
+                    <option value="45">45 Sec</option>
+                    <option value="60">60 Sec</option>
                   </select>
                 </div>
               </div>
