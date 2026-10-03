@@ -112,20 +112,36 @@ export default function Flashcards() {
         <div className="brutal-border bg-white px-4 py-2 font-black uppercase">
           Card {currentIdx + 1}/{cards.length}
         </div>
-        <div className={`brutal-border px-6 py-2 font-black text-3xl ${timeLeft <= 3 ? 'bg-[#EF476F] text-white' : 'bg-[#FFD166]'}`}>
+        <div className={`brutal-border px-6 py-2 font-black text-3xl ${timeLeft <= 3 ? 'bg-[#EF476F] text-white animate-pulse' : 'bg-[#FFD166]'}`}>
           00:{timeLeft.toString().padStart(2, '0')}
         </div>
       </div>
 
-      <div className={`brutal-card ${cardBg} h-64 flex flex-col items-center justify-center text-center transition-colors relative`}>
-        {status === "wrong" && (
-          <div className="absolute top-4 font-black uppercase tracking-widest text-white text-xl">
-            Correct Answer: {currentCard.back}
+      <div className="relative h-64 perspective-[1000px] mb-8 group">
+        <div 
+          className={`w-full h-full transition-transform duration-700 ease-in-out transform-style-3d ${(status === "wrong" || status === "correct") ? "[transform:rotateY(180deg)]" : ""}`}
+          style={{ transformStyle: 'preserve-3d' }}
+        >
+          {/* Front of card */}
+          <div className="absolute inset-0 brutal-card bg-white flex flex-col items-center justify-center text-center backface-hidden" style={{ backfaceVisibility: 'hidden' }}>
+            <h2 className="text-3xl md:text-4xl font-heading uppercase max-w-xl leading-tight px-4">
+              {currentCard.front}
+            </h2>
           </div>
-        )}
-        <h2 className="text-3xl md:text-4xl font-black uppercase max-w-xl leading-tight">
-          {currentCard.front}
-        </h2>
+
+          {/* Back of card */}
+          <div 
+            className={`absolute inset-0 brutal-card ${cardBg} flex flex-col items-center justify-center text-center backface-hidden text-white`}
+            style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
+          >
+            <div className="text-xl font-bold uppercase tracking-widest mb-2 opacity-80">
+              {status === "correct" ? "CORRECT!" : "INCORRECT"}
+            </div>
+            <h2 className="text-4xl md:text-6xl font-heading uppercase max-w-xl leading-tight px-4">
+              {currentCard.back}
+            </h2>
+          </div>
+        </div>
       </div>
 
       <form onSubmit={handleSubmit} className="mt-8 flex gap-4">
