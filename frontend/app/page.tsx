@@ -125,7 +125,7 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Step 1 */}
-          <div className="bg-white brutal-border brutal-shadow p-6 flex flex-col h-64 relative transition-transform hover:-translate-y-2">
+          <div className="brutal-card-interactive flex flex-col h-64 relative p-6 cursor-pointer">
             <div className="flex justify-between items-start mb-4">
               <span className="font-heading text-4xl text-transparent" style={{ WebkitTextStroke: "1px #1A1A1A" }}>01</span>
               <div className="bg-[#FFD166] brutal-border p-2"><span className="text-xl">📄</span></div>
@@ -135,7 +135,7 @@ export default function Home() {
           </div>
           
           {/* Step 2 */}
-          <div className="bg-white brutal-border brutal-shadow p-6 flex flex-col h-64 relative transition-transform hover:-translate-y-2">
+          <div className="brutal-card-interactive flex flex-col h-64 relative p-6 cursor-pointer">
             <div className="flex justify-between items-start mb-4">
               <span className="font-heading text-4xl text-transparent" style={{ WebkitTextStroke: "1px #1A1A1A" }}>02</span>
               <div className="bg-[#06D6A0] brutal-border p-2"><span className="text-xl">🤖</span></div>
@@ -145,7 +145,7 @@ export default function Home() {
           </div>
 
           {/* Step 3 */}
-          <div className="bg-white brutal-border brutal-shadow p-6 flex flex-col h-64 relative transition-transform hover:-translate-y-2">
+          <div className="brutal-card-interactive flex flex-col h-64 relative p-6 cursor-pointer">
             <div className="flex justify-between items-start mb-4">
               <span className="font-heading text-4xl text-transparent" style={{ WebkitTextStroke: "1px #1A1A1A" }}>03</span>
               <div className="bg-[#EF476F] brutal-border p-2"><span className="text-xl">⚡</span></div>
@@ -155,7 +155,7 @@ export default function Home() {
           </div>
 
           {/* Step 4 */}
-          <div className="bg-white brutal-border brutal-shadow p-6 flex flex-col h-64 relative transition-transform hover:-translate-y-2">
+          <div className="brutal-card-interactive flex flex-col h-64 relative p-6 cursor-pointer">
             <div className="flex justify-between items-start mb-4">
               <span className="font-heading text-4xl text-transparent" style={{ WebkitTextStroke: "1px #1A1A1A" }}>04</span>
               <div className="bg-[#118AB2] brutal-border p-2"><span className="text-xl">⭐</span></div>

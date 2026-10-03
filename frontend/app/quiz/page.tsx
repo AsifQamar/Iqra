@@ -157,7 +157,7 @@ export default function Quiz() {
               key={idx}
               onClick={() => handleOptionSelect(option)}
               disabled={!!selected}
-              className={`brutal-card ${extraClass} ${opacity} text-black hover:-translate-y-1 transition-transform min-h-32 flex items-center justify-center`}
+              className={`brutal-card-interactive cursor-pointer ${extraClass} ${opacity} text-black min-h-32 flex items-center justify-center`}
             >
               <span className="text-xl font-heading uppercase text-center leading-tight">{option}</span>
             </button>

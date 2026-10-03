@@ -35,6 +35,11 @@
     font-family: var(--font-heading);
     letter-spacing: -0.02em;
   }
+  
+  ::selection {
+    background-color: var(--color-brutal-yellow);
+    color: var(--color-brutal-black);
+  }
 }
 
 @layer utilities {
@@ -92,5 +97,14 @@
     border: 3px solid var(--color-brutal-black);
     box-shadow: var(--shadow-brutal);
     @apply bg-white p-8;
+  }
+  
+  .brutal-card-interactive {
+    @apply brutal-card transition-all duration-200;
+  }
+  
+  .brutal-card-interactive:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 9px 9px 0px 0px #1A1A1A;
   }
 }
