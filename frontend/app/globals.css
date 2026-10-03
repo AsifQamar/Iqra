@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brutal-bg: #FDFBF7;
+  --color-brutal-yellow: #FFD166;
+  --color-brutal-green: #06D6A0;
+  --color-brutal-red: #EF476F;
+  --color-brutal-blue: #118AB2;
+  --color-brutal-purple: #7B2CBF;
+  --color-brutal-orange: #F77F00;
+  --color-brutal-black: #1A1A1A;
+  
+  --shadow-brutal: 5px 5px 0px 0px #1A1A1A;
+  --shadow-brutal-sm: 3px 3px 0px 0px #1A1A1A;
+  --shadow-brutal-lg: 8px 8px 0px 0px #1A1A1A;
+  
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-heading: var(--font-archivo-black), sans-serif;
+  --font-sans: var(--font-space-grotesk), sans-serif;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-brutal-bg);
+    color: var(--color-brutal-black);
+    font-family: var(--font-sans);
+    background-image: 
+      linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px);
+    background-size: 32px 32px;
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .font-heading {
+    font-family: var(--font-heading);
+  }
+  .font-sans {
+    font-family: var(--font-sans);
+  }
+
+  .brutal-border {
+    border: 3px solid var(--color-brutal-black);
+  }
+  
+  .brutal-shadow {
+    box-shadow: var(--shadow-brutal);
+  }
+  
+  .brutal-shadow-sm {
+    box-shadow: var(--shadow-brutal-sm);
+  }
+
+  .brutal-shadow-hover:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0px 0px #1A1A1A;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+  }
+  
+  .brutal-shadow-active:active {
+    transform: translate(3px, 3px);
+    box-shadow: 2px 2px 0px 0px #1A1A1A;
+  }
+
+  .brutal-btn {
+    border: 3px solid var(--color-brutal-black);
+    box-shadow: var(--shadow-brutal);
+    @apply font-heading px-6 py-4 tracking-widest uppercase transition-all duration-100 text-sm;
+  }
+  .brutal-btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0px 0px #1A1A1A;
+  }
+  .brutal-btn:active {
+    transform: translate(3px, 3px);
+    box-shadow: 2px 2px 0px 0px #1A1A1A;
+  }
+
+  .brutal-input {
+    border: 3px solid var(--color-brutal-black);
+    box-shadow: var(--shadow-brutal-sm);
+    @apply bg-white px-4 py-3 font-mono text-sm focus:outline-none focus:ring-0 focus:shadow-[6px_6px_0px_0px_#1A1A1A] transition-shadow duration-100 placeholder:opacity-50;
+  }
+
+  .brutal-card {
+    border: 3px solid var(--color-brutal-black);
+    box-shadow: var(--shadow-brutal);
+    @apply bg-white p-8;
+  }
+}
