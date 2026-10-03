@@ -11,12 +11,6 @@ export default function Home() {
   const [numQuestions, setNumQuestions] = useState("10");
   const [timer, setTimer] = useState("10");
 
-  useEffect(() => {
-    if (!localStorage.getItem("iqra_user")) {
-      router.push("/auth");
-    }
-  }, [router]);
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!text.trim() && !file) return;

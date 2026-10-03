@@ -64,23 +64,25 @@ export default function Quiz() {
     if (showResult && questions.length > 0) {
       sessionStorage.setItem("iqra_performance", JSON.stringify(performance));
       
-      const historyStr = localStorage.getItem("iqra_history");
-      const history = historyStr ? JSON.parse(historyStr) : [];
-      const newItem = {
-        id: Date.now().toString(),
-        title: `Quiz on ${questions[0].topic || 'General Material'}`,
-        date: new Date().toISOString(),
-        score,
-        total: questions.length * 10,
-        performance
-      };
-      // Prevent duplicate saving
-      if (!history.find((item: any) => item.id === newItem.id)) {
-        // Just push to history. We avoid exact time dupe by checking if last item has same performance length and score (simple dedup)
-        const isDupe = history.length > 0 && history[history.length - 1].score === score && history[history.length - 1].total === newItem.total && new Date().getTime() - new Date(history[history.length - 1].date).getTime() < 5000;
-        if (!isDupe) {
-          history.push(newItem);
-          localStorage.setItem("iqra_history", JSON.stringify(history));
+      const user = localStorage.getItem("iqra_user");
+      if (user) {
+        const historyStr = localStorage.getItem("iqra_history");
+        const history = historyStr ? JSON.parse(historyStr) : [];
+        const newItem = {
+          id: Date.now().toString(),
+          title: `Quiz on ${questions[0].topic || 'General Material'}`,
+          date: new Date().toISOString(),
+          score,
+          total: questions.length * 10,
+          performance
+        };
+        // Prevent duplicate saving
+        if (!history.find((item: any) => item.id === newItem.id)) {
+          const isDupe = history.length > 0 && history[history.length - 1].score === score && history[history.length - 1].total === newItem.total && new Date().getTime() - new Date(history[history.length - 1].date).getTime() < 5000;
+          if (!isDupe) {
+            history.push(newItem);
+            localStorage.setItem("iqra_history", JSON.stringify(history));
+          }
         }
       }
     }
