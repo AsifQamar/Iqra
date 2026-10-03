@@ -120,7 +120,7 @@ export default function Quiz() {
     <div className="max-w-4xl mx-auto mt-10">
       <div className="flex justify-between items-center mb-8 brutal-border bg-white p-4 brutal-shadow-sm">
         <div className="font-black text-xl uppercase">Question {currentIdx + 1}/{questions.length}</div>
-        <div className={\`font-black text-2xl uppercase px-4 py-1 \${timeLeft <= 5 ? 'bg-[#EF476F] text-white animate-pulse' : 'bg-[#FFD166] text-black'}\`}>
+        <div className={`font-black text-2xl uppercase px-4 py-1 ${timeLeft <= 5 ? 'bg-[#EF476F] text-white animate-pulse' : 'bg-[#FFD166] text-black'}`}>
           00:{timeLeft.toString().padStart(2, '0')}
         </div>
         <div className="font-black text-xl uppercase bg-[#1A1A1A] text-white px-4 py-1">Score: {score}</div>
@@ -157,7 +157,7 @@ export default function Quiz() {
               key={idx}
               onClick={() => handleOptionSelect(option)}
               disabled={!!selected}
-              className={\`brutal-card \${extraClass} \${opacity} text-black hover:-translate-y-1 transition-transform min-h-32 flex items-center justify-center\`}
+              className={`brutal-card ${extraClass} ${opacity} text-black hover:-translate-y-1 transition-transform min-h-32 flex items-center justify-center`}
             >
               <span className="text-xl font-heading uppercase text-center leading-tight">{option}</span>
             </button>
