@@ -1,7 +1,10 @@
 # Iqra
+<img width="1887" height="957" alt="image" src="https://github.com/user-attachments/assets/2570245a-c36e-42c0-8962-bbf21a40f942" />
+<img width="1875" height="955" alt="image" src="https://github.com/user-attachments/assets/0661df4e-6993-4200-b6ce-000abe078272" />
+<img width="1912" height="955" alt="image" src="https://github.com/user-attachments/assets/35e9c062-17c2-4129-9c35-c9d358f85bc0" />
+<img width="1878" height="955" alt="image" src="https://github.com/user-attachments/assets/05eeb7e5-2801-4a3b-85b3-d9bd17aa8690" />
+<img width="1875" height="955" alt="image" src="https://github.com/user-attachments/assets/ac0ec338-c120-4da5-8e5d-16640e833927" />
 
-[Screenshot Placeholder 1]
-[Screenshot Placeholder 2]
 
 ## The Problem
 Students often experience study fatigue and burnout when trying to digest large amounts of complex information using traditional methods like reading textbooks or passive reviewing. Passive studying leads to poor retention, low motivation, and high anxiety before exams.
