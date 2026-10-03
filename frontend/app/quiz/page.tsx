@@ -60,6 +60,32 @@ export default function Quiz() {
     return () => clearInterval(timerId);
   }, [timeLeft, showResult, selected, questions.length]);
 
+  useEffect(() => {
+    if (showResult && questions.length > 0) {
+      sessionStorage.setItem("iqra_performance", JSON.stringify(performance));
+      
+      const historyStr = localStorage.getItem("iqra_history");
+      const history = historyStr ? JSON.parse(historyStr) : [];
+      const newItem = {
+        id: Date.now().toString(),
+        title: `Quiz on ${questions[0].topic || 'General Material'}`,
+        date: new Date().toISOString(),
+        score,
+        total: questions.length * 10,
+        performance
+      };
+      // Prevent duplicate saving
+      if (!history.find((item: any) => item.id === newItem.id)) {
+        // Just push to history. We avoid exact time dupe by checking if last item has same performance length and score (simple dedup)
+        const isDupe = history.length > 0 && history[history.length - 1].score === score && history[history.length - 1].total === newItem.total && new Date().getTime() - new Date(history[history.length - 1].date).getTime() < 5000;
+        if (!isDupe) {
+          history.push(newItem);
+          localStorage.setItem("iqra_history", JSON.stringify(history));
+        }
+      }
+    }
+  }, [showResult, performance, score, questions]);
+
   if (questions.length === 0) return <div className="text-center font-bold text-2xl uppercase mt-20">Loading Quiz...</div>;
 
   const currentQ = questions[currentIdx];
@@ -96,7 +122,6 @@ export default function Quiz() {
   };
 
   if (showResult) {
-    sessionStorage.setItem("iqra_performance", JSON.stringify(performance));
     return (
       <div className="max-w-2xl mx-auto mt-20 text-center brutal-card bg-white">
         <h1 className="text-6xl font-black uppercase mb-6 text-[#7B2CBF]">Quiz Complete!</h1>

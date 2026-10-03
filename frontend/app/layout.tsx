@@ -45,6 +45,7 @@ export default function RootLayout({
               <Link href="/quiz" className="hover:opacity-70 transition-opacity">QUIZ</Link>
               <Link href="/flashcards" className="hover:opacity-70 transition-opacity">FLASHCARDS</Link>
               <Link href="/revision" className="hover:opacity-70 transition-opacity">NOTES</Link>
+              <Link href="/history" className="hover:opacity-70 transition-opacity text-[#EF476F]">HISTORY</Link>
             </nav>
             
             {/* Right Buttons */}
