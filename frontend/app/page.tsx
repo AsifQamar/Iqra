@@ -77,14 +77,14 @@ export default function Home() {
           <div className="flex gap-4">
             <button 
               onClick={() => {
-                document.getElementById("upload-section")?.scrollIntoView({ behavior: "smooth" });
+                document.getElementById("upload-form")?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="bg-[#FFD166] text-[#1A1A1A] border-[3px] border-[#1A1A1A] shadow-[4px_4px_0px_0px_#1A1A1A] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0px_0px_#1A1A1A] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all px-8 py-4 font-heading text-sm uppercase tracking-widest flex items-center gap-2"
+              className="bg-[#FFD166] text-[#1A1A1A] border-[3px] border-[#1A1A1A] shadow-[4px_4px_0px_0px_#1A1A1A] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0px_0px_#1A1A1A] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all px-8 py-4 font-heading font-bold text-base uppercase tracking-widest flex items-center gap-2"
             >
               START LEARNING →
             </button>
-            <button className="bg-white text-[#1A1A1A] border-[3px] border-[#1A1A1A] shadow-[4px_4px_0px_0px_#1A1A1A] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0px_0px_#1A1A1A] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all px-8 py-4 font-heading text-sm uppercase tracking-widest flex items-center gap-2">
-              <span className="text-lg">🏃</span> PRACTICE SOLO
+            <button className="bg-white text-[#1A1A1A] border-[3px] border-[#1A1A1A] shadow-[4px_4px_0px_0px_#1A1A1A] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0px_0px_#1A1A1A] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all px-8 py-4 font-heading font-bold text-base uppercase tracking-widest flex items-center gap-2">
+              <span className="text-xl">🏃‍♂️</span> PRACTICE SOLO
             </button>
           </div>
         </div>
@@ -167,7 +167,7 @@ export default function Home() {
       </div>
 
       {/* Upload Form replacing the "2 ROLES / 7 STEPS / 8 MIN" banner structure */}
-      <form onSubmit={handleSubmit} className="mb-24 relative">
+      <form id="upload-form" onSubmit={handleSubmit} className="mb-24 relative pt-12">
         <div className="flex flex-col md:flex-row w-full brutal-border brutal-shadow-lg overflow-hidden">
           
           <div className="bg-[#FFD166] border-b-[3px] md:border-b-0 md:border-r-[3px] border-[#1A1A1A] p-6 w-full md:w-1/3 flex flex-col justify-center">
