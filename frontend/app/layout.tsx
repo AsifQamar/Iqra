@@ -36,11 +36,11 @@ export default function RootLayout({
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
               </div>
-              <span className="font-heading text-xl tracking-widest mt-1">IQRA</span>
+              <span className="font-heading font-black text-2xl tracking-[0.2em] mt-1">IQRA</span>
             </Link>
             
             {/* Center Navigation */}
-            <nav className="hidden lg:flex items-center gap-8 font-bold text-xs tracking-[0.2em] text-[#1A1A1A] mt-1">
+            <nav className="hidden lg:flex items-center gap-8 font-black text-sm tracking-[0.2em] text-[#1A1A1A] mt-1">
               <Link href="/" className="hover:opacity-70 transition-opacity">DASHBOARD</Link>
               <Link href="/quiz" className="hover:opacity-70 transition-opacity">QUIZ</Link>
               <Link href="/flashcards" className="hover:opacity-70 transition-opacity">FLASHCARDS</Link>
@@ -62,7 +62,7 @@ export default function RootLayout({
           </div>
           
           {/* Sub-header ticker bar (from image 1) */}
-          <div className="bg-[#1A1A1A] text-white text-[10px] font-bold tracking-[0.2em] py-1.5 overflow-hidden flex whitespace-nowrap">
+          <div className="bg-[#1A1A1A] text-white text-[11px] font-black tracking-[0.25em] py-2 overflow-hidden flex whitespace-nowrap">
             <div className="flex items-center gap-8 mx-auto">
               <span className="flex items-center gap-3"><span className="text-[#FFD166]">◇</span> AI POWERED GENERATION</span>
               <span className="flex items-center gap-3"><span className="text-[#FFD166]">◇</span> INSTANT QUIZZES</span>
