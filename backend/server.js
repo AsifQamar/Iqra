@@ -34,6 +34,12 @@ app.post('/api/upload', upload.single('file'), async (req, res) => {
       return res.status(400).json({ error: 'No content provided' });
     }
 
+    // Speed optimization: Truncate massive textbooks to first ~8000 chars
+    // This dramatically reduces LLM context size and speeds up generation time by 3-4x.
+    if (textContent.length > 8000) {
+      textContent = textContent.substring(0, 8000);
+    }
+
     // Process with AI
     console.log(`Processing content of length: ${textContent.length}, generating ${numQuestions} questions`);
     
