@@ -117,26 +117,33 @@ export default function Flashcards() {
         </div>
       </div>
 
-      <div className="relative h-64 mb-8 group brutal-card bg-white p-0 overflow-hidden">
-        {/* Front of card */}
+      <div className="relative h-64 perspective-[1000px] mb-8 group">
         <div 
-          className={`absolute inset-0 flex flex-col items-center justify-center text-center p-8 transition-opacity duration-300 ${(status === "wrong" || status === "correct") ? "opacity-0 pointer-events-none" : "opacity-100"}`}
+          className={`w-full h-full transition-transform duration-700 ease-in-out transform-style-3d ${(status === "wrong" || status === "correct") ? "[transform:rotateY(180deg)]" : ""}`}
+          style={{ transformStyle: 'preserve-3d' }}
         >
-          <h2 className="text-3xl md:text-4xl font-heading uppercase max-w-xl leading-tight px-4 text-[#1A1A1A]">
-            {currentCard.front}
-          </h2>
-        </div>
-
-        {/* Back of card */}
-        <div 
-          className={`absolute inset-0 flex flex-col items-center justify-center text-center p-8 transition-opacity duration-300 ${cardBg} text-white ${(status === "wrong" || status === "correct") ? "opacity-100" : "opacity-0 pointer-events-none"}`}
-        >
-          <div className="text-xl font-bold uppercase tracking-widest mb-2 opacity-80">
-            {status === "correct" ? "CORRECT!" : "INCORRECT"}
+          {/* Front of card */}
+          <div 
+            className="absolute inset-0 bg-white border-[3px] border-[#1A1A1A] shadow-[5px_5px_0px_0px_#1A1A1A] flex flex-col items-center justify-center text-center backface-hidden p-8"
+            style={{ backfaceVisibility: 'hidden' }}
+          >
+            <h2 className="text-3xl md:text-4xl font-heading uppercase max-w-xl leading-tight px-4 text-[#1A1A1A]" style={{ transform: 'translateZ(1px)' }}>
+              {currentCard.front}
+            </h2>
           </div>
-          <h2 className="text-4xl md:text-6xl font-heading uppercase max-w-xl leading-tight px-4">
-            {currentCard.back}
-          </h2>
+
+          {/* Back of card */}
+          <div 
+            className={`absolute inset-0 ${cardBg} border-[3px] border-[#1A1A1A] shadow-[5px_5px_0px_0px_#1A1A1A] flex flex-col items-center justify-center text-center backface-hidden text-white p-8`}
+            style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
+          >
+            <div className="text-xl font-bold uppercase tracking-widest mb-2 opacity-80" style={{ transform: 'translateZ(1px)' }}>
+              {status === "correct" ? "CORRECT!" : "INCORRECT"}
+            </div>
+            <h2 className="text-4xl md:text-6xl font-heading uppercase max-w-xl leading-tight px-4" style={{ transform: 'translateZ(1px)' }}>
+              {currentCard.back}
+            </h2>
+          </div>
         </div>
       </div>
 
