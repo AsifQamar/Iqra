@@ -52,7 +52,7 @@ export default function RootLayout({
               <Link href="/store" className="bg-white text-[#1A1A1A] border-[3px] border-[#1A1A1A] font-bold text-xs tracking-[0.1em] px-5 py-2 hover:bg-gray-50 uppercase shadow-[2px_2px_0px_0px_#1A1A1A] active:shadow-none active:translate-y-[2px] active:translate-x-[2px] transition-all">
                 Rewards Store
               </Link>
-              <Link href="/" className="bg-[#FFD166] text-[#1A1A1A] border-[3px] border-[#1A1A1A] font-bold text-xs tracking-[0.1em] px-5 py-2 hover:bg-[#ffc640] uppercase shadow-[2px_2px_0px_0px_#1A1A1A] active:shadow-none active:translate-y-[2px] active:translate-x-[2px] transition-all flex items-center gap-2">
+              <Link href="/#upload-form" className="bg-[#FFD166] text-[#1A1A1A] border-[3px] border-[#1A1A1A] font-bold text-xs tracking-[0.1em] px-5 py-2 hover:bg-[#ffc640] uppercase shadow-[2px_2px_0px_0px_#1A1A1A] active:shadow-none active:translate-y-[2px] active:translate-x-[2px] transition-all flex items-center gap-2">
                 Upload Material
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="square">
                   <path d="M5 12h14M12 5l7 7-7 7" />
